@@ -18,6 +18,16 @@ body {
     width: 100%;
 }
 
+#repo-box ol {
+	float: left;
+	margin: 0.9% 5% 1%;
+}
+
+#repo-box h1 {
+	margin-left: 20%;
+    color: white;
+}
+
 /* css for start page asking for username */
 
 #title {

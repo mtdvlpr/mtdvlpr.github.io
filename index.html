@@ -41,19 +41,19 @@
     <!-- The div below is all you need to list all repositories-->
 	<div id="repo-box">
 		<ol>
-			<li><a href="#repo-box-originals">Originals</a></li>
-			<li><a href="#repo-box-forks">Forks</a></li>
+			<li><a href="#originals">Originals</a></li>
+			<li><a href="#forks">Forks</a></li>
 		</ol>
-		<div id="repo-box-originals"><h1>Originals</h1></div>
+		<div id="originals"><h1>Originals</h1></div>
 		<hr>
-    	<div id="repo-box-forks"><h1>Forks</h1></div>
+    	<div id="forks"><h1>Forks</h1></div>
 	</div>
 	
    <script>
 			var full = document.querySelectorAll("#title").length > 0;
 			if (full) {
-            	document.getElementById("back").style.display = "none";
-             document.getElementById("repo-box").style.display = "none";
+            			document.getElementById("back").style.display = "none";
+             			document.getElementById("repo-box").style.display = "none";
 			} else {
 				getusername('');
 			}

@@ -24,32 +24,49 @@
 </head>
 
 <body>
-    
+
 <!--
     <div id="title">
         <h1>Enter GitHub Username:</h1>
         <input id="user" type="text" placeholder="seyon123">
-        <button id="btn" onclick="getusername()">View Repos</button>
+        <button id="btn" onclick="getusername(this.previousElementSibling.value)">View Repos</button>
         <br><i>*Repos may appear at a slower rate compared to other content on screen.</i>
+    </div>
+
+    <div id="back">
+        <a href=".">Go Back</a>
     </div>
 -->
 
-    <div id="back">
-        <a href="index.html">Go Back</a>
-    </div>
-
     <!-- The div below is all you need to list all repositories-->
-    <div id="repo-box"></div>
-
-
-    <script>
-            document.getElementById("back").style.display = "none";
-            function getusername() {
-                var user = document.getElementById("user").value;
-                document.getElementById("title").style.display = "none";
-                document.getElementById("repo-box").style.display = "block";
-                document.getElementById("back").style.display = "block";
-                genRepo(user);
+	<div id="repo-box">
+		<ol>
+			<li><a href="#repo-box-originals">Originals</a></li>
+			<li><a href="#repo-box-forks">Forks</a></li>
+		</ol>
+		<div id="repo-box-originals"><h1>Originals</h1></div>
+		<hr>
+    	<div id="repo-box-forks"><h1>Forks</h1></div>
+	</div>
+	
+   <script>
+			var full = document.querySelectorAll("#title").length > 0;
+			if (full) {
+            	document.getElementById("back").style.display = "none";
+             document.getElementById("repo-box").style.display = "none";
+			} else {
+				getusername('');
+			}
+            function getusername(user) {
+				var params = ""; // API allowed paramters like "?type=all&sort=updated&direction=asc";
+				if (full) {
+					document.getElementById("title").style.display = "none";
+					document.getElementById("repo-box").style.display = "block";
+					document.getElementById("back").style.display = "block";
+				} else {
+					user = document.domain.split('.', 1); // alternatively, manually enter a different user than yourself
+				}
+               	genRepo(user, params);
             }
         </script>
 </body>

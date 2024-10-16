@@ -3,14 +3,7 @@
 //   Copyright (c) 2022 Seyon Rajagopal
 // -------------------------------------------
 
-
-// To use a form instead of a specific user comment out the following 2 lines of code:
-
-var user = document.domain.split('.', 1); // alternatively, manually enter a different user than yourself using var user = 'alternate_username';
-window.onload = genRepo(user);
-
-
-function genRepo(user) {
+function genRepo(user, params) {
     const testuser = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
 
     if (testuser.test(user) == false || user == "" || user == null) {
@@ -18,8 +11,10 @@ function genRepo(user) {
     }
 
     else {
-
-        var requestURL = 'https://api.github.com/users/' + user + '/repos';
+		if (params == "") {
+			params = location.search;
+		}
+        var requestURL = 'https://api.github.com/users/' + user + '/repos' + params;
         var request = $.get(requestURL, function () {
         })
             .done(function () {
@@ -47,7 +42,7 @@ function genRepo(user) {
                         }
 
                         // Puts repo information into div
-                        $("#repo-box").append("<a href='" + repo_url + "' target='_blank'><div class='repo-item'><h1 class='title'>" +
+                        $("#repo-box-" + (request[i].fork ? "forks" : "originals")).append("<a href='" + repo_url + "' target='_blank'><div class='repo-item'><h1 class='title'>" +
                             username + "/" +
                             repo_name + "</h1><p class='description'>" +
                             repo_description + "</p>" + "<div class='bottom'><div class='language'><span class='img' uk-icon='code' class='uk-icon'></span>" +

@@ -18,12 +18,12 @@ body {
     width: 100%;
 }
 
-#repo-box ol {
+#repo-box>ol {
 	float: left;
 	margin: 0.9% 5% 0%;
 }
 
-#repo-box h1 {
+#repo-box>div>h1 {
     margin-left: 20%;
     color: white;
 }

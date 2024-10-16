@@ -42,7 +42,7 @@ function genRepo(user, params) {
                         }
 
                         // Puts repo information into div
-                        $("#repo-box-" + (request[i].fork ? "forks" : "originals")).append("<a href='" + repo_url + "' target='_blank'><div class='repo-item'><h1 class='title'>" +
+                        $("#" + (request[i].fork ? "forks" : "originals")).append("<a href='" + repo_url + "' target='_blank'><div class='repo-item'><h1 class='title'>" +
                             username + "/" +
                             repo_name + "</h1><p class='description'>" +
                             repo_description + "</p>" + "<div class='bottom'><div class='language'><span class='img' uk-icon='code' class='uk-icon'></span>" +

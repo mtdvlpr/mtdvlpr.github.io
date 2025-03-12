@@ -2,7 +2,7 @@
 |![Home Page](screen1.png "Home Page")|![Repo Page](screen2.png "Repo Page")|
 |:---:|:---:|
 
-![GitHub repo size](https://img.shields.io/github/repo-size/seyon123/list-github-repos?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/seyon123/list-github-repos?label=Last%20Commit&style=for-the-badge) ![GitHub](https://img.shields.io/github/license/seyon123/list-github-repos?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/mtdvlpr/mtdvlpr.github.io?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/mtdvlpr/mtdvlpr.github.io?label=Last%20Commit&style=for-the-badge) ![GitHub](https://img.shields.io/github/license/mtdvlpr/mtdvlpr.github.io?style=for-the-badge)
  ## Overview
  This repo lists all of your GitHub repos onto a webpage. The styling and functionality can easily be customized to meet your needs. A demo webpage can be found here: https://repos.seyonrajagopal.ca/
 
